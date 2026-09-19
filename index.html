@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Auralis — Recovery intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    .queue-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:5px;padding:14px 20px 10px}.queue-summary div{background:#f5f8f3;border-radius:7px;padding:9px 7px;display:flex;flex-direction:column;gap:4px}.queue-summary strong{font-size:15px}.queue-summary span,.queue-label{font:500 7px 'DM Mono',monospace;color:#9aa49e;letter-spacing:.06em}.queue-label{padding:5px 20px 2px;display:flex;justify-content:space-between}.lead-list{max-height:390px;overflow-y:auto}.lead-info strong{font-size:11px}.lead-info small{font-size:9px;color:#9aa39e}.lead-info .action{color:#709a5b;font-size:8px}.priority{font:500 7px 'DM Mono',monospace;font-style:normal;padding:2px 4px;border-radius:4px;margin-left:3px}.priority.high{background:#ffe2db;color:#b55545}.priority.medium{background:#fff0cb;color:#a17b32}.priority.review{background:#e8e0fb;color:#7457a3}.chat-box{border-top:1px solid var(--line);padding:12px 29px 0;display:flex;gap:8px}.chat-box input{flex:1;border:1px solid var(--line);border-radius:7px;padding:10px 12px;font:11px Manrope}.chat-box button{border:0;border-radius:7px;background:var(--dark);color:#fff;padding:0 16px;font:500 10px 'DM Mono',monospace}.quick-examples{padding:9px 29px 4px;display:flex;gap:6px;flex-wrap:wrap}.quick-examples button{border:1px solid #e1e7e1;background:#f7faf6;border-radius:20px;padding:5px 8px;color:#6d8070;font:500 8px 'DM Mono',monospace;cursor:pointer}
+    .judge-card,.timeline{border-top:1px solid var(--line);padding-bottom:10px}.score-row{display:flex;align-items:center;gap:10px;padding:14px 20px}.score-row strong{font-size:28px;color:#5f934d}.score-row span,.next-action span{font:500 8px 'DM Mono',monospace;color:#87938d;letter-spacing:.06em}.score-row small,.next-action small{font:9px Manrope;color:#9aa49e;letter-spacing:0}.next-action{margin:0 15px;padding:11px;background:#f2f8ed;border-radius:8px;display:flex;flex-direction:column;gap:4px}.next-action strong{font-size:13px;color:#5f934d}.judge-buttons{padding:10px 15px 4px;display:flex;flex-wrap:wrap;gap:5px}.judge-buttons button{border:1px solid #dfe8dc;background:#f7faf6;border-radius:15px;padding:6px 8px;color:#6d8070;font:500 8px 'DM Mono',monospace;cursor:pointer}.timeline-item{display:grid;grid-template-columns:35px 1fr auto;gap:7px;padding:8px 20px;font-size:9px;color:#748079}.timeline-item b,.timeline-item i{font:500 8px 'DM Mono',monospace;color:#98a39d}.timeline-item i{color:#70a557;font-style:normal}
+    .journey-map{border-top:1px solid var(--line);padding-bottom:10px}.map-step{display:grid;grid-template-columns:25px 1fr auto;gap:8px;align-items:center;padding:9px 20px;border-left:3px solid transparent}.map-step.active{border-left-color:#9ada68;background:#f5faf1}.map-step>b{font:500 9px 'DM Mono',monospace;color:#9aa49e}.map-step span{display:flex;flex-direction:column;gap:3px}.map-step strong{font-size:10px}.map-step small{font-size:8px;color:#9aa49e}.map-step i{font:500 7px 'DM Mono',monospace;color:#6da35a;font-style:normal}
+    .capture-card{border-top:1px solid var(--line);padding-bottom:15px}.capture-grid{display:grid;grid-template-columns:1fr 1fr;gap:7px;padding:12px 15px}.capture-grid input,.capture-grid select{border:1px solid var(--line);border-radius:6px;padding:8px;font:9px Manrope;color:#68746f;background:#fff}.consent-check{display:flex;gap:7px;align-items:center;padding:0 15px 10px;font-size:9px;color:#748079}.submit-journey{margin:0 15px;width:calc(100% - 30px);border:0;border-radius:7px;background:var(--dark);color:#fff;padding:10px;font:500 9px 'DM Mono',monospace;cursor:pointer}.savings-result{margin:10px 15px 0;padding:11px;background:#f2f8ed;border-radius:8px;display:flex;flex-direction:column;gap:4px;font-size:10px}.savings-result strong{color:#5f934d;font:500 9px 'DM Mono',monospace}.savings-result span{color:#58655d}.savings-result b{font-size:16px;color:#5f934d}.savings-result small{color:#8a958d;font-size:8px}
+  </style>
+</head>
+<body>
+  <div class="shell">
+    <header class="topbar">
+      <div class="brand"><span class="brand-mark">◌</span><span>AURALIS</span><span class="brand-tag">RECOVERY INTELLIGENCE</span></div>
+      <div class="top-status"><span class="live-dot"></span> SYSTEMS NOMINAL <span class="divider"></span> SYDNEY · 10:42 AM</div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div>
+          <div class="eyebrow">ENERGY / DROPOUT RECOVERY</div>
+          <h1>Bring the journey<br><em>back to life.</em></h1>
+          <p class="hero-copy">Auralis listens for intent, captures what matters, and knows the exact moment to bring a human back into the conversation.</p>
+        </div>
+        <div class="hero-metrics"><div><b>24</b><span>LEADS IN QUEUE</span></div><div><b>82%</b><span>AUTOMATED RECOVERY</span></div><div><b>1.7×</b><span>FASTER COMPLETION</span></div></div>
+      </section>
+
+      <section class="workspace">
+        <aside class="leads-panel panel">
+          <div class="panel-head"><span>RECOVERY QUEUE</span><span class="count">24</span></div>
+          <div class="filter-row"><span class="filter active">ALL <small>24</small></span><span class="filter">READY <small>18</small></span><span class="filter">REVIEW <small>6</small></span></div>
+          <div class="queue-summary"><div><strong>24</strong><span>OPEN LEADS</span></div><div><strong>8m</strong><span>AVG. AGE</span></div><div><strong>72%</strong><span>RECOVERABLE</span></div></div>
+          <div class="queue-label"><span>PRIORITISED BY AI</span><span>NEXT ACTION</span></div>
+          <div class="lead-list">
+            <button class="lead active" data-name="Priya Nair" data-id="EN-48219" data-drop="Postcode" data-mood="warm"><span class="avatar coral">PN</span><span class="lead-info"><strong>Priya Nair <em class="priority high">HIGH</em></strong><small>Postcode · 22h ago</small><small class="action">Call now · 84% likely</small></span><span class="lead-chevron">›</span></button>
+            <button class="lead" data-name="Jordan Wu" data-id="EN-48207" data-drop="Usage estimate"><span class="avatar blue">JW</span><span class="lead-info"><strong>Jordan Wu <em class="priority medium">MED</em></strong><small>Usage estimate · 23h ago</small><small class="action">Send reminder · 61%</small></span><span class="lead-chevron">›</span></button>
+            <button class="lead" data-name="Mia Thompson" data-id="EN-48188" data-drop="Retailer"><span class="avatar violet">MT</span><span class="lead-info"><strong>Mia Thompson <em class="priority review">REVIEW</em></strong><small>Retailer · 2d ago</small><small class="action">Check DNC · human review</small></span><span class="lead-chevron">›</span></button>
+            <button class="lead" data-name="Liam O'Connor" data-id="EN-48164" data-drop="Moving date"><span class="avatar mint">LO</span><span class="lead-info"><strong>Liam O'Connor</strong><small>Started Mon · 11:22 AM</small></span><span class="lead-chevron">›</span></button>
+          </div>
+          <div class="queue-note"><span class="spark">✦</span><span><strong>AI PRIORITY</strong><br>Priya is 4× more likely to convert today.</span></div>
+        </aside>
+
+        <section class="call-panel panel">
+          <div class="call-head"><div><div class="eyebrow">ACTIVE RECOVERY</div><h2 id="customerName">Priya Nair <span class="verified">✓</span></h2><p id="customerMeta">Lead EN-48219 · Energy comparison · Awaiting consent</p></div><div class="call-actions"><button class="icon-btn" title="Notes">≡</button><button class="start-btn" id="startBtn">Start call</button><button class="end-btn" id="endBtn">End call</button></div></div>
+          <div class="call-status"><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div><span id="statusText">Listening</span><span class="timer">02:14</span><span class="secure">● RECORDED WITH CONSENT</span></div>
+          <div class="transcript" id="transcript"><div class="empty-transcript">Click <strong>Start call</strong> to begin the consent-led recovery conversation.</div></div>
+          <div class="chat-box"><input id="chatInput" placeholder="Type what the customer says…" aria-label="Customer message"/><button id="sendChat">Send</button></div>
+          <div class="quick-examples"><button data-chat="I have already told you three times. This is ridiculous.">ANGER</button><button data-chat="I don't understand what you are asking.">CONFUSION</button><button data-chat="Can you tell me which plan is cheapest?">OFF-SCRIPT</button><button data-chat="I want to speak to a person.">ASKS HUMAN</button><button data-chat="Can I give you my card number?">SENSITIVE</button></div>
+          <div class="call-controls"><button class="mic-btn" id="micBtn"><span>◉</span> Listening automatically</button><button class="scenario-btn" id="frustrationBtn">Run frustration scenario <span>↗</span></button></div>
+        </section>
+
+        <aside class="insights-panel panel">
+          <div class="panel-head"><span>LIVE SIGNALS</span><span class="pulse">●</span></div>
+          <div class="signal-card"><div class="signal-top"><span>CONVERSATION STATE</span><span class="state-pill good" id="statePill">ON TRACK</span></div><div class="signal-value" id="signalValue">Positive / cooperative</div><div class="confidence"><span>CONFIDENCE</span><strong>96%</strong></div><div class="bar"><i style="width:96%"></i></div></div>
+          <div class="signal-card"><div class="signal-top"><span>CAPTURED JOURNEY</span><span class="tiny" id="journeyCount">0 / 2</span></div><div class="field pending" id="postcodeField"><span class="field-dot"></span><span>Postcode</span><strong id="postcodeValue">Awaiting</strong></div><div class="field pending" id="moveDateField"><span class="field-dot"></span><span>Move-in date</span><strong id="moveDateValue">Awaiting</strong></div><div class="journey-bar"><i id="journeyProgress" style="width:0%"></i></div></div>
+          <div class="handoff-card" id="handoffCard"><div class="handoff-icon">↗</div><div><strong>HUMAN HANDOFF READY</strong><p>When things turn, context moves with the call.</p></div></div>
+          <div class="guardrails"><div class="panel-head"><span>GUARDRAILS</span><span class="all-good">ALL CLEAR</span></div><div class="guard"><span>◉</span><span>Consent confirmed</span><b>PASS</b></div><div class="guard"><span>⌁</span><span>DNC check</span><b>PASS</b></div><div class="guard"><span>◇</span><span>Advice boundary</span><b>ACTIVE</b></div></div>
+          <div class="judge-card"><div class="panel-head"><span>JUDGE MODE</span><span class="all-good">LIVE</span></div><div class="score-row"><strong>84</strong><span>AI PRIORITY SCORE<br><small>Recent dropout · consent · no DNC</small></span></div><div class="next-action"><span>NEXT BEST ACTION</span><strong id="nextActionValue">CALL NOW</strong><small id="nextActionDetail">Postcode captured · move-in date missing</small></div><div class="judge-buttons"><button data-chat="Yes, continue">Happy path</button><button data-chat="I have already told three of you. Stop calling me.">Anger / DNC</button><button data-chat="Can I give you my card number?">Sensitive</button><button data-chat="Which plan is cheapest?">Off-script</button></div></div>
+          <div class="timeline"><div class="panel-head"><span>SAFETY TIMELINE</span><span class="tiny">TODAY</span></div><div class="timeline-item"><b>10:40</b><span>Consent disclosed</span><i>PASS</i></div><div class="timeline-item"><b>10:41</b><span>Postcode captured</span><i>PASS</i></div><div class="timeline-item"><b>—</b><span>Handoff trigger</span><i>WAITING</i></div></div>
+          <div class="journey-map"><div class="panel-head"><span>ENERGY JOURNEY MAP</span><span class="tiny">RECOVERY PATH</span></div><div class="map-step active"><b>01</b><span><strong>Location & meter</strong><small>Postcode · move date · NMI</small></span><i>NOW</i></div><div class="map-step"><b>02</b><span><strong>Consumption profile</strong><small>Bill · usage · household estimate</small></span><i>NEXT</i></div><div class="map-step"><b>03</b><span><strong>Infrastructure</strong><small>Solar · controlled load · EV</small></span><i>QUEUED</i></div><div class="map-step"><b>04</b><span><strong>Lead capture</strong><small>Name · email · phone · consent</small></span><i>QUEUED</i></div></div>
+          <div class="capture-card"><div class="panel-head"><span>COMPLETE ENERGY CAPTURE</span><span class="tiny">TEST DATA</span></div><div class="capture-grid"><input id="nmi" placeholder="NMI (11 digits)" maxlength="11"><select id="usage"><option value="">Usage source</option><option>Smart meter / CDR</option><option>Recent bill · 12.5 kWh/day</option><option>Household estimate</option></select><input id="household" placeholder="People in household"><select id="solar"><option>No solar</option><option>Solar · 5 kW</option><option>Solar · 10 kW</option></select><select id="controlled"><option>No controlled load</option><option>Controlled load present</option></select><select id="ev"><option>No EV</option><option>EV at property</option></select><input id="contactName" placeholder="Name"><input id="contactEmail" placeholder="Email"><input id="contactPhone" placeholder="Test phone"><select id="concession"><option>No concession card</option><option>Pensioner / Health Care Card</option></select></div><label class="consent-check"><input type="checkbox" id="privacyConsent"> Customer agrees to privacy and contact consent (test data)</label><button class="submit-journey" id="submitJourney">Calculate savings & submit journey</button><div class="savings-result" id="savingsResult"></div></div>
+        </aside>
+      </section>
+      <div class="footer-note"><span>BUILT FOR THE MOMENT A CUSTOMER CHANGES THEIR MIND</span><span>AURALIS v0.9.4 · TEST DATA ONLY</span></div>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
