@@ -1,0 +1,38 @@
+flowchart LR
+    C[Customer voice or text] --> V[Voice layer\nBrowser SpeechRecognition]
+    V -->|speech text| UI[Auralis Console\nindex.html · styles.css · app.js]
+    UI --> API[FastAPI backend\nbackend/app.py]
+
+    API --> S{Safety router}
+    S -->|safe| G[LangGraph recovery workflow\nbackend/workflow.py]
+    S -->|DNC / anger / human request| H[Human handoff\ncontext attached]
+    S -->|callback later| CB[Save callback request\nend current call]
+    S -->|sensitive payment topic| H
+
+    G --> ST{Journey state}
+    ST --> A[Consent]
+    A --> B[Postcode]
+    B --> D[Move-in date]
+    D --> E[Energy profile\nNMI · usage · household · solar · EV]
+    E --> F[Contact and concession]
+    F --> P[Privacy consent]
+    P --> J[Submit sandbox journey]
+
+    G -->|next question| UI
+    G -->|captured field| R[Right-side live signals\nprogress · confidence · guardrails]
+    UI --> N[AI Call Notes\nauto-saved per lead]
+    API --> DB[(conversations.json\nper-lead transcripts)]
+    N --> DB
+
+    API -. optional .-> O[Ollama Qwen3:8B\nLLM fallback]
+    API -. optional .-> W[Faster-Whisper\nspeech-to-text]
+    API -. optional .-> T[Piper\ntext-to-speech]
+    T --> C
+    UI -->|browser speech output| C
+
+    classDef ui fill:#eaf4e4,stroke:#78a55f,color:#1e3024;
+    classDef safety fill:#fff1df,stroke:#d39b4c,color:#4a3212;
+    classDef data fill:#e9f1fb,stroke:#7197c2,color:#1d3048;
+    class UI,R,N ui;
+    class S,H,CB safety;
+    class DB,O,W,T data;

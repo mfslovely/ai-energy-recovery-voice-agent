@@ -23,6 +23,8 @@ A voice-first, consent-led recovery console for abandoned Australian Energy comp
 - Simulated DMO/VDO savings result; no product or financial advice.
 - Optional LangGraph, Ollama (`qwen3:8b`), Faster-Whisper, and Piper adapters.
 
+Architecture source: [`docs/architecture.mmd`](docs/architecture.mmd). It can be pasted into Mermaid Live, GitHub Mermaid markdown, or any Mermaid-compatible editor.
+
 ## Run locally
 
 ### Frontend
