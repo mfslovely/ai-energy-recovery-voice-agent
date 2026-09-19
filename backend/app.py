@@ -7,6 +7,13 @@ from pydantic import BaseModel, Field
 from fastapi.responses import Response
 
 ROOT = Path(__file__).resolve().parent
+DATA_DIR = ROOT / "data"
+DATA_DIR.mkdir(exist_ok=True)
+CONVERSATIONS_FILE = DATA_DIR / "conversations.json"
+try:
+    CONVERSATIONS = json.loads(CONVERSATIONS_FILE.read_text(encoding="utf-8")) if CONVERSATIONS_FILE.exists() else {}
+except Exception:
+    CONVERSATIONS = {}
 app = FastAPI(title="Auralis Recovery API", version="0.1.0")
 app.add_middleware(CORSMiddleware, allow_origins=["*"], allow_methods=["*"], allow_headers=["*"])
 
@@ -15,7 +22,8 @@ LEADS = [
     {"id":"EN-48207","name":"Jordan Wu","email":"jordan.test@example.com","phone":"+61 400 000 207","last_completed":"Usage estimate","postcode":"3056","move_in_date":"2026-10-18","status":"ready"},
     {"id":"EN-48188","name":"Mia Thompson","email":"mia.test@example.com","phone":"+61 400 000 188","last_completed":"Retailer","postcode":"2065","move_in_date":"2026-10-02","status":"review"},
 ]
-CONVERSATIONS = {}
+def persist_conversations():
+    CONVERSATIONS_FILE.write_text(json.dumps(CONVERSATIONS, indent=2, ensure_ascii=False), encoding="utf-8")
 
 class Turn(BaseModel):
     lead_id: str
@@ -63,6 +71,7 @@ def get_conversation(lead_id: str):
 def save_conversation(lead_id: str, body: dict):
     turn = {"role": body.get("role", "customer"), "text": body.get("text", ""), "timestamp": datetime.now(timezone.utc).isoformat()}
     CONVERSATIONS.setdefault(lead_id, []).append(turn)
+    persist_conversations()
     return {"saved": True, "turn": turn, "count": len(CONVERSATIONS[lead_id])}
 
 @app.post("/api/conversation/analyse")

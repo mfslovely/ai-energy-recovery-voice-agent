@@ -11,6 +11,7 @@ __pycache__/
 *.wav
 *.mp3
 *.webm
+backend/data/*.json
 node_modules/
 .DS_Store
 .pytest_cache/
