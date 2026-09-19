@@ -2,7 +2,15 @@
 
 A voice-first, consent-led recovery console for abandoned Australian Energy comparison journeys. It resumes missing fields, captures structured test data, creates live call notes, and stops or escalates safely when required.
 
+## Screenshots
+
 ![Auralis dashboard](screenshots/auralis-dashboard.png)
+
+![Full console](screenshots/auralis-full-console.png)
+
+![Right-side intelligence panel](screenshots/auralis-right-panel.png)
+
+![Conversation with captured turns](screenshots/auralis-conversation-view.png)
 
 ## Highlights
 
