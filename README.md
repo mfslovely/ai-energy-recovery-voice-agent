@@ -25,6 +25,8 @@ A voice-first, consent-led recovery console for abandoned Australian Energy comp
 
 Architecture source: [`docs/architecture.mmd`](docs/architecture.mmd). It can be pasted into Mermaid Live, GitHub Mermaid markdown, or any Mermaid-compatible editor.
 
+![Auralis system architecture](docs/architecture.svg)
+
 ## Run locally
 
 ### Frontend
