@@ -1,0 +1,13 @@
+flowchart LR
+    C[Customer] --> V[Voice or Text Input]
+    V --> F[Auralis Frontend Console]
+    F --> B[FastAPI Backend]
+    B --> W[LangGraph Workflow]
+    W --> S[Safety Checks]
+    S -->|Safe| Q[Ask Next Missing Question]
+    S -->|Risk or DNC| H[Human Handoff]
+    Q --> D[Save Lead Data and Notes]
+    D --> F
+    W --> E[Submit Energy Journey]
+    F --> T[AI Voice Response]
+    T --> C

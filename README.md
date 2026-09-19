@@ -23,9 +23,23 @@ A voice-first, consent-led recovery console for abandoned Australian Energy comp
 - Simulated DMO/VDO savings result; no product or financial advice.
 - Optional LangGraph, Ollama (`qwen3:8b`), Faster-Whisper, and Piper adapters.
 
-Architecture source: [`docs/architecture.mmd`](docs/architecture.mmd). It can be pasted into Mermaid Live, GitHub Mermaid markdown, or any Mermaid-compatible editor.
+Simple architecture source: [`docs/simple-architecture.mmd`](docs/simple-architecture.mmd).
 
-![Auralis system architecture](docs/architecture.svg)
+```mermaid
+flowchart LR
+    C[Customer] --> V[Voice or Text Input]
+    V --> F[Auralis Frontend Console]
+    F --> B[FastAPI Backend]
+    B --> W[LangGraph Workflow]
+    W --> S[Safety Checks]
+    S -->|Safe| Q[Ask Next Missing Question]
+    S -->|Risk or DNC| H[Human Handoff]
+    Q --> D[Save Lead Data and Notes]
+    D --> F
+    W --> E[Submit Energy Journey]
+    F --> T[AI Voice Response]
+    T --> C
+```
 
 ## Run locally
 
