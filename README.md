@@ -2,6 +2,10 @@
 
 A voice-first, consent-led recovery console for abandoned Australian Energy comparison journeys. It resumes missing fields, captures structured test data, creates live call notes, and stops or escalates safely when required.
 
+## Live demo
+
+[Open the deployed Auralis voice agent on Render](https://ai-energy-recovery-voice-agent.onrender.com)
+
 ## Screenshots
 
 ![Auralis dashboard](screenshots/auralis-dashboard.png)
@@ -56,7 +60,7 @@ Open `http://127.0.0.1:4173`.
 ```powershell
 py -3.12 -m venv .venv
 .\\.venv\\Scripts\\Activate.ps1
-pip install -r requirements.txt
+pip install -r backend/requirements.txt
 uvicorn backend.app:app --reload --port 8000
 ```
 
